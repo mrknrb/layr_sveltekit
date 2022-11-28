@@ -1,0 +1,190 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ActivityGroupTypes": {
+            "enum": [
+                "adventure",
+                "altruism",
+                "creating",
+                "essentials",
+                "goingOut",
+                "health",
+                "lazyFun",
+                "learning",
+                "love",
+                "relaxing",
+                "socialisation",
+                "status"
+            ],
+            "type": "string"
+        },
+        "ActivityTypes": {
+            "enum": [
+                "MovieWatching",
+                "clothing",
+                "create",
+                "eating",
+                "electricity",
+                "homeCleaning",
+                "homeRepairing",
+                "housing",
+                "insurances",
+                "otherHouseHoldExp",
+                "personalCare",
+                "reading",
+                "relaxing",
+                "selfCleaning",
+                "sport",
+                "timeWasted",
+                "water"
+            ],
+            "type": "string"
+        },
+        "CoreValueTypes": {
+            "enum": [
+                "adventure",
+                "altruism",
+                "creation",
+                "enjoyment",
+                "health",
+                "knowledgeForCuriosity",
+                "knowledgeForHighCult",
+                "knowledgeForLowCult",
+                "knowledgeForRandomStuff",
+                "knowledgeForWork",
+                "love",
+                "relaxation",
+                "socialisation",
+                "status"
+            ],
+            "type": "string"
+        },
+        "ProductiveTypes": {
+            "enum": [
+                "NonProductive",
+                "Productive",
+                "SuperProductive"
+            ],
+            "type": "string"
+        },
+        "SettingsTypes": {
+            "enum": [
+                "boolean",
+                "dropDown",
+                "horizontalList",
+                "number",
+                "slider",
+                "verticalList"
+            ],
+            "type": "string"
+        },
+        "StaticData_Activity": {
+            "properties": {
+                "activityGroupType": {
+                    "$ref": "#/definitions/ActivityGroupTypes"
+                },
+                "activityLogo": {
+                    "type": "string"
+                },
+                "activitySettings": {
+                    "items": {
+                        "$ref": "#/definitions/StaticData_Setting"
+                    },
+                    "type": "array"
+                },
+                "activityType": {
+                    "$ref": "#/definitions/ActivityTypes"
+                },
+                "basePrice": {
+                    "type": "number"
+                },
+                "defaultUnit": {
+                    "$ref": "#/definitions/TimeUnits"
+                },
+                "productive": {
+                    "$ref": "#/definitions/ProductiveTypes"
+                }
+            },
+            "type": "object"
+        },
+        "StaticData_ActivityGroup": {
+            "properties": {
+                "GroupType": {
+                    "$ref": "#/definitions/ActivityGroupTypes"
+                }
+            },
+            "type": "object"
+        },
+        "StaticData_Setting": {
+            "properties": {
+                "settingName": {
+                    "type": "string"
+                },
+                "settingOptions": {
+                    "items": {
+                        "$ref": "#/definitions/StaticData_SettingOption"
+                    },
+                    "type": "array"
+                },
+                "settingType": {
+                    "$ref": "#/definitions/SettingsTypes"
+                }
+            },
+            "type": "object"
+        },
+        "StaticData_SettingOption": {
+            "properties": {
+                "coreValueTypes": {
+                    "items": {
+                        "properties": {
+                            "coreValue": {
+                                "$ref": "#/definitions/CoreValueTypes"
+                            },
+                            "rank": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "moneyAdd": {
+                    "type": "number"
+                },
+                "moneyMultiplier": {
+                    "type": "number"
+                },
+                "settingOptionName": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "TimeUnits": {
+            "enum": [
+                "FullDay_Year",
+                "Hour_Month",
+                "Hour_Year",
+                "Minute_Day",
+                "Minute_Week"
+            ],
+            "type": "string"
+        }
+    },
+    "properties": {
+        "activities": {
+            "items": {
+                "$ref": "#/definitions/StaticData_Activity"
+            },
+            "type": "array"
+        },
+        "activityGroups": {
+            "items": {
+                "$ref": "#/definitions/StaticData_ActivityGroup"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+

@@ -1,0 +1,134 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ActivityTypes": {
+            "enum": [
+                "altruism",
+                "create",
+                "eating",
+                "goingOut",
+                "housing",
+                "knowledge",
+                "love",
+                "personalCare",
+                "pleasure",
+                "relaxing",
+                "sport",
+                "status",
+                "travel"
+            ],
+            "type": "string"
+        },
+        "CoreValueTypes": {
+            "enum": [
+                "adventure",
+                "altruism",
+                "creation",
+                "enjoyment",
+                "health",
+                "knowledgeForCuriosity",
+                "knowledgeForHighCult",
+                "knowledgeForLowCult",
+                "knowledgeForRandomStuff",
+                "knowledgeForWork",
+                "love",
+                "relaxation",
+                "socialisation",
+                "status"
+            ],
+            "type": "string"
+        },
+        "SettingsTypes": {
+            "enum": [
+                "boolean",
+                "dropDown",
+                "horizontalList",
+                "number",
+                "slider",
+                "verticalList"
+            ],
+            "type": "string"
+        },
+        "StaticData_Activity": {
+            "properties": {
+                "activitySettings": {
+                    "items": {
+                        "$ref": "#/definitions/StaticData_Setting"
+                    },
+                    "type": "array"
+                },
+                "activityType": {
+                    "$ref": "#/definitions/ActivityTypes"
+                },
+                "canBeWithOthers": {
+                    "type": "boolean"
+                },
+                "defaultUnit": {
+                    "$ref": "#/definitions/TimeUnits"
+                },
+                "hasTime": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "StaticData_Setting": {
+            "properties": {
+                "settingName": {
+                    "type": "string"
+                },
+                "settingOptions": {
+                    "items": {
+                        "$ref": "#/definitions/StaticData_SettingOption"
+                    },
+                    "type": "array"
+                },
+                "settingType": {
+                    "$ref": "#/definitions/SettingsTypes"
+                }
+            },
+            "type": "object"
+        },
+        "StaticData_SettingOption": {
+            "properties": {
+                "coreValueTypes": {
+                    "items": {
+                        "properties": {
+                            "coreValue": {
+                                "$ref": "#/definitions/CoreValueTypes"
+                            },
+                            "rank": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "settingOptionName": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "TimeUnits": {
+            "enum": [
+                "Day",
+                "Month",
+                "Week",
+                "Year"
+            ],
+            "type": "string"
+        }
+    },
+    "properties": {
+        "activities": {
+            "items": {
+                "$ref": "#/definitions/StaticData_Activity"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+
