@@ -1,6 +1,6 @@
 import { EditorCommands } from '../../../clientApi/EditorCommands';
 import { ViewEnums } from '../../views/data/ViewStaticData';
-import { UIStoreCommands } from '../clientApi/UIStore/UIStore';
+import { UIStoreCommands } from '../../../clientApi/UIStore/UIStore';
 import { CommandType } from '../../../../../Egyebek/CommandApi/CommandType';
 
 export enum TopMenuEnums {

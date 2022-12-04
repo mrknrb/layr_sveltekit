@@ -42,6 +42,7 @@
 		"firebase": "^9.12.1",
 		"nanoid": "^4.0.0",
 		"query-string": "^7.1.1",
+		"svelte-asyncable": "^2.1.0",
 		"svelte-icons": "^2.1.0"
 	}
 }

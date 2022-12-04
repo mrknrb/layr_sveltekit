@@ -1,4 +1,4 @@
-import { UIStoreCommands } from '../comps/ui/clientApi/UIStore/UIStore';
+import { UIStoreCommands } from './UIStore/UIStore';
 import { DocConnStoreCommands } from './DocConnStore/DocConnStore';
 
 export let EditorCommands = {

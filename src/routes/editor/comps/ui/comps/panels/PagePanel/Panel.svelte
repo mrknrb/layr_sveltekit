@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UIStore } from '../../../clientApi/UIStore/UIStore';
+	import { UIStore } from '../../../../../clientApi/UIStore/UIStore';
 	import { PanelEnums } from '../../../data/PanelStaticData';
 	import PanelButton from './PanelButton.svelte';
 	import ViewGenerator from '../../../../views/comps/ViewGenerator.svelte';

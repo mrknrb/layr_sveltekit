@@ -1,3 +1,13 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { supabase } from '../lib/supabaseClient';
+	/* yx supabase test	*/
+	onMount(async () => {
+		const { data, error } = await supabase.from('docs').select('*');
+		console.log(data);
+	});
+</script>
+
 <div class="flex flex-col content-center items-center">
 	<img src="images/logo.png" class="w-52" />
 

@@ -3,7 +3,7 @@
 	import DocView from './DocView/DocView.svelte';
 	import ElementView from './ElementView/ElementView.svelte';
 	import DetailsView from './DetailsView/DetailsView.svelte';
-	import { UIStore } from '../../ui/clientApi/UIStore/UIStore';
+	import { UIStore } from '../../../clientApi/UIStore/UIStore';
 	import TemplateView from './TemplateView/TemplateView.svelte';
 
 	export let ViewType: ViewEnums;
